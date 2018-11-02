@@ -1,0 +1,19 @@
+{
+  "name": "homebridge-countdown",
+  "version": "1.0.0",
+  "description": "Accessory to countdown from an Value: https://github.com/nfarina/homebridge",
+  "keywords": [
+    "homebridge-plugin",
+    "countdown",
+    "timer",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bwejs/homebridge-countdown"
+  },
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  }
+}
