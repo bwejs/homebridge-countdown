@@ -54,14 +54,19 @@ countdown.prototype.setTimer = function () {
   }
   this.timer = setTimeout(function() {
     this.value--;
-    this.log(this.name + ' Counting down. ' + this.value);
+      if (this.value < 15) {
+          this.log(this.name + ' Counting down. ' + this.value);
+      } else if ((this.value % 15) == 0) {
+          this.log(this.name + ' Counting down. ' + this.value);
+      }
     this.contdownCharacteristic.updateValue(this.value);
     this.setTimer()
   }.bind(this), 1000);
 }
 
 countdown.prototype.setValue = function (newValue, callback) {
-    this.value = newValue
+    this.value = Math.round(newValue);
+    this.log(this.name + ' Writing Value to ' + this.value);
     this.setTimer()
     callback();
 }
